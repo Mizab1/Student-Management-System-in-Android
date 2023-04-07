@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!--    header-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/light_yellow"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Student Records"
+            android:textStyle="bold"
+            android:layout_marginTop="19dp"
+            android:gravity="center"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="70dp"
+        android:gravity="center_horizontal">
+        <!--    buttons: general-->
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="General"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            android:background="@color/background"
+            />
+        <Button
+            android:id="@+id/browseBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="update"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
