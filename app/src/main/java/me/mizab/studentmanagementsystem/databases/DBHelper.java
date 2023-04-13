@@ -21,6 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COL_NAME = "name";
     public static final String COL_ROLL_NO = "rollNo";
     public static final String COL_AGE = "age";
+    public static final String COL_GENDER = "gender";
     public static final String COL_ENROLLMENT = "enrollment";
     public static final String COL_EMAIL = "email";
     public static final String COL_BRANCH = "branch";
@@ -37,6 +38,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + COL_NAME + " TEXT, "
                 + COL_AGE + " VARCHAR, "
                 + COL_ROLL_NO + " VARCHAR, "
+                + COL_GENDER + " VARCHAR,"
                 + COL_ENROLLMENT + " VARCHAR,"
                 + COL_EMAIL + " VARCHAR, "
                 + COL_BRANCH + " TEXT, "
@@ -59,6 +61,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(COL_NAME, studInfo.getName());
         contentValues.put(COL_ROLL_NO, studInfo.getRollNo());
         contentValues.put(COL_AGE, studInfo.getAge());
+        contentValues.put(COL_GENDER, studInfo.getGender());
         contentValues.put(COL_EMAIL, studInfo.getEmail());
         contentValues.put(COL_BRANCH, studInfo.getBranch());
         contentValues.put(COL_YEAR, studInfo.getYear());
@@ -75,6 +78,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(COL_NAME, studInfo.getName());
         contentValues.put(COL_ROLL_NO, studInfo.getRollNo());
         contentValues.put(COL_AGE, studInfo.getAge());
+        contentValues.put(COL_GENDER, studInfo.getGender());
         contentValues.put(COL_EMAIL, studInfo.getEmail());
         contentValues.put(COL_BRANCH, studInfo.getBranch());
         contentValues.put(COL_YEAR, studInfo.getYear());
@@ -101,13 +105,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 StudInfo studInfo = new StudInfo();
                 studInfo.setId(cursor.getInt(0));
                 studInfo.setName(cursor.getString(1));
-                studInfo.setRollNo(cursor.getString(2));
-                studInfo.setAge(cursor.getString(3));
-                studInfo.setEnrollNo(cursor.getString(4));
-                studInfo.setEmail(cursor.getString(5));
-                studInfo.setBranch(cursor.getString(6));
-                studInfo.setYear(cursor.getString(7));
-                studInfo.setPhone(cursor.getString(8));
+                studInfo.setAge(cursor.getString(2));
+                studInfo.setRollNo(cursor.getString(3));
+                studInfo.setGender(cursor.getString(4));
+                studInfo.setEnrollNo(cursor.getString(5));
+                studInfo.setEmail(cursor.getString(6));
+                studInfo.setBranch(cursor.getString(7));
+                studInfo.setYear(cursor.getString(8));
+                studInfo.setPhone(cursor.getString(9));
                 studInfos.add(studInfo);
             }while(cursor.moveToNext());
         }
@@ -128,13 +133,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 StudInfo studInfo = new StudInfo();
                 studInfo.setId(cursor.getInt(0));
                 studInfo.setName(cursor.getString(1));
-                studInfo.setRollNo(cursor.getString(2));
-                studInfo.setAge(cursor.getString(3));
-                studInfo.setEnrollNo(cursor.getString(4));
-                studInfo.setEmail(cursor.getString(5));
-                studInfo.setBranch(cursor.getString(6));
-                studInfo.setYear(cursor.getString(7));
-                studInfo.setPhone(cursor.getString(8));
+                studInfo.setAge(cursor.getString(2));
+                studInfo.setRollNo(cursor.getString(3));
+                studInfo.setGender(cursor.getString(4));
+                studInfo.setEnrollNo(cursor.getString(5));
+                studInfo.setEmail(cursor.getString(6));
+                studInfo.setBranch(cursor.getString(7));
+                studInfo.setYear(cursor.getString(8));
+                studInfo.setPhone(cursor.getString(9));
                 studInfos.add(studInfo);
             }while(cursor.moveToNext());
         }

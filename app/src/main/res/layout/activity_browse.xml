@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".general.Browse">
+    android:orientation="vertical"
+    android:background="@drawable/scroll_bg">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_margin="10dp">
 
+    <ImageView
+        android:id="@+id/browse_title_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/browse"/>
+
+    <TextView style="@style/SubTitle"
+        android:id="@+id/sub_title"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_toEndOf="@id/browse_title_img"
+        android:text="@string/browse_title"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
+        android:layout_below="@id/browse_title_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"/>
 </RelativeLayout>
+
+</FrameLayout>

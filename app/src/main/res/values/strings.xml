@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">Student Management App</string>
+    <string name="browse_btn">Browse</string>
+    <string name="add_btn">Add</string>
+    <string name="update_btn">update</string>
+    <string name="delete_btn">Delete</string>
+    <string name="browse_title">Browse through Student Data</string>
+    <string name="update_title">Update Student Data</string>
+    <string name="delete_title">Delete Student Data</string>
+    <string name="add_title">Add Student by Filling Form</string>
+    <string name="display_title">Student Information</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="gender_other">Other</string>
+    <string name="phone_hint">Enter 10 digit Phone number</string>
+    <string name="phone_text">Phone Number</string>
+    <string name="ty_text">TY</string>
+    <string name="sy_text">SY</string>
+    <string name="fy_text">FY</string>
+    <string name="email_text">Email</string>
+    <string name="student_age_text">Student Age</string>
+    <string name="enrollment_number_text">Enrollment Number</string>
+    <string name="roll_number_text">Roll Number</string>
+    <string name="student_name_text">Student Name</string>
+    <string name="student_name_hint">Enter First and Last Name</string>
+    <string name="roll_number_hint">Enter 2 digit Roll Number</string>
+    <string name="enrollment_number_hint">Enter 10 digit Enrollment Number</string>
+    <string name="student_age_hint">Enter your age in digits</string>
+    <string name="email_hint">example@gmail.com</string>
+    <string name="select_gender_text">Select Gender</string>
+    <string name="gender_text">Gender</string>
+    <string name="branch_text">Branch</string>
+    <string name="branch_hint">Enter your Branch only</string>
+    <string name="select_year_text">Select Year</string>
+    <string name="year_text">Year</string>
+    <string name="submit_button">Submit</string>
 </resources>

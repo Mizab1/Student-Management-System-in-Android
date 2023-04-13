@@ -1,189 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".general.DisplayMoreInfoActivity">
+    android:orientation="vertical"
+    android:background="@drawable/scroll_bg">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/add_title_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/add"/>
+
+    <TextView style="@style/SubTitle"
+        android:id="@+id/sub_title"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_toEndOf="@id/add_title_img"
+        android:text="@string/add_title"/>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/light_yellow"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:layout_below="@id/sub_title">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update Information"
-            android:textStyle="bold"
-            android:layout_marginTop="19dp"
-            android:gravity="center"
-            android:textSize="24sp"/>
-    </LinearLayout>
+            android:orientation="vertical">
 
-    <TableLayout
-        android:id="@+id/add_table_layout"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="70dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:text="Name:"
-                android:textSize="20dp"
-                android:layout_weight="1"
-                android:layout_marginStart="30dp"
-                />
-            <EditText
+            <TextView style="@style/FormLabel"
+                android:text="@string/student_name_text"/>
+            <EditText style="@style/FormText"
                 android:id="@+id/add_name"
-                android:hint="Enter Name"
-                android:textSize="18dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                />
-        </TableRow>
+                android:hint="@string/student_name_hint"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:text="Roll No:"
-                android:textSize="20dp"
-                android:layout_weight="1"
-                android:layout_marginStart="30dp"
-                />
-            <EditText
+            <TextView style="@style/FormLabel"
+                android:layout_marginTop="20dp"
+                android:text="@string/roll_number_text"/>
+            <EditText style="@style/FormText"
                 android:id="@+id/add_roll_no"
-                android:hint="Enter Roll No"
-                android:textSize="18dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                />
-        </TableRow>
+                android:hint="@string/roll_number_hint"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:text="Enrollment:"
-                android:textSize="20dp"
-                android:layout_weight="1"
-                android:layout_marginStart="30dp"
-                />
-            <EditText
+            <TextView style="@style/FormLabel"
+                android:layout_marginTop="20dp"
+                android:text="@string/enrollment_number_text"/>
+            <EditText style="@style/FormText"
                 android:id="@+id/add_enroll_no"
-                android:hint="Enter Enrollment No"
-                android:textSize="18dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                />
-        </TableRow>
+                android:hint="@string/enrollment_number_hint"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:text="Age:"
-                android:textSize="20dp"
-                android:layout_weight="1"
-                android:layout_marginStart="30dp"
-                />
-            <EditText
+            <TextView style="@style/FormLabel"
+                android:layout_marginTop="20dp"
+                android:text="@string/student_age_text"/>
+            <EditText style="@style/FormText"
                 android:id="@+id/add_age"
-                android:hint="Enter Age"
-                android:textSize="18dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                />
-        </TableRow>
+                android:hint="@string/student_age_hint"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:text="Email:"
-                android:textSize="20dp"
-                android:layout_weight="1"
-                android:layout_marginStart="30dp"
-                />
-            <EditText
+            <TextView style="@style/FormLabel"
+                android:layout_marginTop="20dp"
+                android:text="@string/select_gender_text"/>
+            <RadioGroup android:orientation="horizontal"
+                android:id="@+id/add_gender"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="start">
+                <RadioButton
+                    android:id="@+id/add_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/gender_male"
+                    android:textSize="16sp"/>
+                <RadioButton
+                    android:id="@+id/add_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/gender_female"
+                    android:textSize="16sp"/>
+                <RadioButton
+                    android:id="@+id/add_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:checked="true"
+                    android:text="@string/gender_other"
+                    android:textSize="16sp"/>
+            </RadioGroup>
+
+            <TextView style="@style/FormLabel"
+                android:layout_marginTop="20dp"
+                android:text="@string/email_text"/>
+            <EditText style="@style/FormText"
                 android:id="@+id/add_email"
-                android:hint="Enter Email"
-                android:textSize="18dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                />
-        </TableRow>
+                android:hint="@string/email_hint"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:text="Branch:"
-                android:textSize="20dp"
-                android:layout_weight="1"
-                android:layout_marginStart="30dp"
-                />
-            <EditText
+            <TextView style="@style/FormLabel"
+                android:layout_marginTop="20dp"
+                android:text="@string/branch_text"/>
+            <EditText style="@style/FormText"
                 android:id="@+id/add_branch"
-                android:hint="Enter Branch"
-                android:textSize="18dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:text="Year:"
-                android:textSize="20dp"
-                android:layout_weight="1"
-                android:layout_marginStart="30dp"
-                />
-            <EditText
+                android:hint="@string/branch_hint"/>
+
+            <TextView style="@style/FormLabel"
+                android:layout_marginTop="20dp"
+                android:text="@string/select_year_text"/>
+            <RadioGroup android:orientation="horizontal"
                 android:id="@+id/add_year"
-                android:hint="Enter Year"
-                android:textSize="18dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:text="Phone:"
-                android:textSize="20dp"
-                android:layout_weight="1"
-                android:layout_marginStart="30dp"
-                />
-            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_gravity="start">
+                <RadioButton
+                    android:id="@+id/add_fy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/fy_text"
+                    android:checked="true"
+                    android:textSize="16sp"/>
+                <RadioButton
+                    android:id="@+id/add_sy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/sy_text"
+                    android:textSize="16sp"/>
+                <RadioButton
+                    android:id="@+id/add_ty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:checked="true"
+                    android:text="@string/ty_text"
+                    android:textSize="16sp"/>
+            </RadioGroup>
+
+            <TextView style="@style/FormLabel"
+                android:layout_marginTop="20dp"
+                android:text="@string/phone_text"/>
+            <EditText style="@style/FormText"
                 android:id="@+id/add_phone"
-                android:hint="Enter Phone No."
-                android:textSize="18dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                />
-        </TableRow>
-    </TableLayout>
-    <Button
-        android:id="@+id/add_submit_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/add_table_layout"
-        android:layout_centerHorizontal="true"
-        android:text="Submit"
-        />
+                android:hint="@string/phone_hint"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/ButtonStyle"
+                android:id="@+id/add_submit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/submit_button"/>
+
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>
+</FrameLayout>

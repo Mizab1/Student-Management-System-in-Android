@@ -11,4 +11,8 @@
     <color name="gray">#80AE9F</color>
     <color name="light_yellow">#D0D36C</color>
     <color name="background">#6BDADCB3</color>
+    <color name="button_stroke">#99000000</color>
+    <color name="blank">#00000000</color>
+    <color name="title_div">#8CEC62</color>
+    <color name="light_gray">#9E9E9E</color>
 </resources>
