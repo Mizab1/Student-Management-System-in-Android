@@ -1,76 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <!--    header-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/light_yellow"
-        android:orientation="horizontal">
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Welcome to Student Records"
-            android:textStyle="bold"
-            android:layout_marginTop="19dp"
-            android:gravity="center"
-            android:textSize="16sp"/>
-    </LinearLayout>
+    <TextView style="@style/MainTitle"/>
 
-    <LinearLayout
+    <TextView style="@style/SubTitle"
+        android:text="Choose Activity"/>
+
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="70dp"
-        android:gravity="center_horizontal">
-        <!--    buttons: general-->
-        <TextView
-            android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="wrap_content"
-            android:text="General"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="40dp"
-            android:background="@color/background"
-            />
-        <Button
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_margin="10dp">
+
+        <!--buttons: general-->
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/browseBtn"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
             android:layout_height="wrap_content"
-            android:text="Browse"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
+            android:text="@string/browse_btn"
+            android:drawableTop="@drawable/browse"
+            style="@style/ButtonStyle"
             />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/addBtn"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
             android:layout_height="wrap_content"
-            android:text="Add"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
+            android:text="@string/add_btn"
+            android:drawableTop="@drawable/add"
+            style="@style/ButtonStyle"
             />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/updateBtn"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
             android:layout_height="wrap_content"
-            android:text="update"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
+            android:text="@string/update_btn"
+            android:drawableTop="@drawable/update"
+            style="@style/ButtonStyle"
             />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/deleteBtn"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
             android:layout_height="wrap_content"
-            android:text="Delete"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
+            android:text="@string/delete_btn"
+            android:drawableTop="@drawable/remove"
+            style="@style/ButtonStyle"
             />
-    </LinearLayout>
+    </GridLayout>
 
-</RelativeLayout>
+</LinearLayout>

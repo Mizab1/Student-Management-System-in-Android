@@ -2,6 +2,7 @@ package me.mizab.studentmanagementsystem.general;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 import me.mizab.studentmanagementsystem.MainActivity;
+import me.mizab.studentmanagementsystem.R;
 import me.mizab.studentmanagementsystem.databases.DBHelper;
 import me.mizab.studentmanagementsystem.model.StudInfo;
 
@@ -20,7 +22,6 @@ public class DeleteActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String Rid = intent.getStringExtra("Rid");
-        System.out.println(Rid);
 
         DBHelper mDBHelper = new DBHelper(getApplicationContext());
         mDBHelper.deleteInfo(Rid);

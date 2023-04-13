@@ -1,7 +1,10 @@
 package me.mizab.studentmanagementsystem.model;
 
+import me.mizab.studentmanagementsystem.R;
+
 public class StudInfo {
     private int id;
+    private String gender; // 0 - male, 1 - female
     private String name;
     private String age;
     private String rollNo;
@@ -11,7 +14,8 @@ public class StudInfo {
     private String year;
     private String phone;
 
-    public StudInfo(String name, String age, String rollNo, String enrollNo, String email, String branch, String year, String phone) {
+    public StudInfo(String gender, String name, String age, String rollNo, String enrollNo, String email, String branch, String year, String phone) {
+        this.gender = gender;
         this.name = name;
         this.age = age;
         this.rollNo = rollNo;
@@ -39,12 +43,19 @@ public class StudInfo {
         this.enrollNo = enrollNo;
     }
 
-
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getAge() {
@@ -77,6 +88,24 @@ public class StudInfo {
 
     public String getYear() {
         return year;
+    }
+
+    public int getYearIndex() {
+        switch (year) {
+            case "SY": return R.id.add_sy;
+            case "TY": return R.id.add_ty;
+            case "FY":
+            default: return R.id.add_fy;
+        }
+    }
+
+    public int getGenderIndex() {
+        switch (gender) {
+            case "Female": return R.id.add_female;
+            case "Other": return R.id.add_other;
+            case "Male":
+            default: return R.id.add_male;
+        }
     }
     public void setYear(String year) {
         this.year = year;

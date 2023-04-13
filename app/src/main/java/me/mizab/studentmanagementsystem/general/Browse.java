@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,8 @@ public class Browse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
 
+        ((TextView) findViewById(R.id.sub_title)).setText(R.string.browse_title);
+
         DBHelper mDBHelper = new DBHelper(getApplicationContext());
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -32,6 +35,5 @@ public class Browse extends AppCompatActivity {
         ArrayList<StudInfo> studInfoArrayList = new ArrayList<>(allInfo);
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(Browse.this, studInfoArrayList, "browse");
         recyclerView.setAdapter(recyclerViewAdapter);
-
     }
 }

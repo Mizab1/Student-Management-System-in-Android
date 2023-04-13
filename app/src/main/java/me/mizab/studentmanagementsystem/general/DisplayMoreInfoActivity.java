@@ -1,10 +1,14 @@
 package me.mizab.studentmanagementsystem.general;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -27,16 +31,19 @@ public class DisplayMoreInfoActivity extends AppCompatActivity {
         DBHelper mDBHelper = new DBHelper(getApplicationContext());
         ArrayList<StudInfo> ListOfInfo = mDBHelper.getInfoById(Rid);
 
-        TextView name = (TextView) findViewById(R.id.more_info_name);
-        TextView rollNo = (TextView) findViewById(R.id.more_info_roll_no);
-        TextView enrollment = (TextView) findViewById(R.id.more_info_enrollment);
-        TextView age = (TextView) findViewById(R.id.more_info_age);
-        TextView email = (TextView) findViewById(R.id.more_info_email);
-        TextView branch = (TextView) findViewById(R.id.more_info_branch);
-        TextView year = (TextView) findViewById(R.id.more_info_year);
-        TextView phone = (TextView) findViewById(R.id.more_info_phone);
+        TextView gender = findViewById(R.id.more_info_gender);
+        TextView name = findViewById(R.id.more_info_name);
+        TextView rollNo = findViewById(R.id.more_info_roll_no);
+        TextView enrollment = findViewById(R.id.more_info_enrollment);
+        TextView age = findViewById(R.id.more_info_age);
+        TextView email = findViewById(R.id.more_info_email);
+        TextView branch = findViewById(R.id.more_info_branch);
+        TextView year = findViewById(R.id.more_info_year);
+        TextView phone = findViewById(R.id.more_info_phone);
+        ImageView profile = findViewById(R.id.profile);
 
         for(StudInfo studInfo: ListOfInfo){
+            gender.setText(studInfo.getGender());
             name.setText(studInfo.getName());
             rollNo.setText(studInfo.getRollNo());
             enrollment.setText(studInfo.getEnrollNo());
@@ -45,6 +52,12 @@ public class DisplayMoreInfoActivity extends AppCompatActivity {
             branch.setText(studInfo.getBranch());
             year.setText(studInfo.getYear());
             phone.setText(studInfo.getPhone());
+
+            String genderText = gender.getText().toString();
+            int drawableID = genderText.equals("Male") ? R.drawable.male :
+                    genderText.equals("Female") ? R.drawable.female : R.drawable.other;
+
+            profile.setImageDrawable(AppCompatResources.getDrawable(this, drawableID));
         }
 
     }
